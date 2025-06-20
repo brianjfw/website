@@ -3,28 +3,28 @@ import './StorySection.css';
 
 const timeline = [
   {
-    year: '1969',
+    year: '1985',
     icon: '🏛️',
-    title: 'Founded in Vancouver',
-    description: 'Zorbas Bakery opens its doors, bringing authentic Greek recipes to the local community.'
+    title: 'Our Beginning',
+    description: 'Zorbas Bakery + Foods began producing high quality, delicious, and healthy Greek foods.'
   },
   {
-    year: '1985',
-    icon: '🍞',
-    title: 'Artisan Breads',
-    description: 'Our artisan breads become a staple in homes and restaurants across the city.'
+    year: '1990 - 1992',
+    icon: '🌍',
+    title: 'Growth & Expansion',
+    description: 'Distribution expanded to all of BC, parts of Western Canada, and the Yukon, prompting a move to our current location in Burnaby.'
   },
   {
     year: '2005',
-    icon: '🌱',
-    title: 'Healthy Expansion',
-    description: 'We introduce vegan, gluten-free, and non-GMO options, staying true to our roots while embracing modern tastes.'
+    icon: '✅',
+    title: 'Commitment to Quality',
+    description: 'Zorbas became an HAACP compliant operation.'
   },
   {
-    year: 'Today',
-    icon: '🌍',
-    title: 'A Greek Tradition',
-    description: 'Still family-owned, Zorbas continues to share the flavors and warmth of Greece with every customer.'
+    year: '2018',
+    icon: '🌱',
+    title: 'Our Mission Continues',
+    description: 'Zorbas continues to inspire a healthy life through delicious foods.'
   }
 ];
 

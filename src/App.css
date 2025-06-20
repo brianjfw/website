@@ -69,6 +69,13 @@
     color: var(--zorbas-primary);
   }
   
+  .zorbas-contact-social-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
   /* ==========================================================================
      3. Header & Navigation
      ========================================================================== */
@@ -138,6 +145,15 @@
     height: 100%;
     display: block;
     object-fit: cover;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+  
+  .zorbas-hero-img-previous {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
   }
   
   .zorbas-hero-overlay {
@@ -285,12 +301,20 @@
   /* ==========================================================================
      7. Product Slides & Featured Products (Upgraded Cards)
      ========================================================================== */
-  .zorbas-slides-upgraded,
   .zorbas-featured-products-upgraded {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    justify-content: center;
+    justify-items: center;
+    padding-bottom: 100px;
+    margin-top: 0;
+  }
+  
+  .zorbas-slides-upgraded {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
   }
   
   .zorbas-slide-card,
@@ -313,7 +337,9 @@
   /* Specifics for Slide Cards (larger) */
   .zorbas-slide-card {
     position: relative;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
+    min-width: 0;
     height: 450px;
     justify-content: flex-end;
     color: #fff;
@@ -378,12 +404,12 @@
   
   /* Specifics for Featured Cards (smaller) */
   .zorbas-featured-card {
-    width: 300px;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(90, 62, 27, 0.13);
-    border: 3px solid var(--zorbas-secondary);
+    width: 100%;
+    max-width: 300px;
+    min-width: 0;
+    background: linear-gradient(135deg, var(--zorbas-bg-light) 80%, #fbeee6 100%);
+    border: 2px solid var(--zorbas-secondary);
+    box-shadow: 0 4px 18px rgba(210, 105, 30, 0.08);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -405,7 +431,7 @@
   
   .zorbas-featured-card:hover {
     transform: translateY(-10px) scale(1.04);
-    box-shadow: 0 16px 48px 0 rgba(210, 105, 30, 0.18), 0 2px 16px rgba(90,62,27,0.13);
+    box-shadow: 0 8px 32px 0 rgba(210, 105, 30, 0.13), 0 2px 16px rgba(90,62,27,0.08);
     border-color: var(--zorbas-primary);
   }
   
@@ -430,24 +456,56 @@
   }
   
   .zorbas-featured-card-content {
-    padding: 2rem 1.2rem 1.5rem 1.2rem;
+    padding: 1.5rem;
     text-align: center;
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
   }
   
   .zorbas-featured-card-content h3 {
     font-size: 1.25rem;
-    color: var(--zorbas-primary);
+    color: var(--zorbas-text-dark);
     font-family: var(--font-display);
     font-weight: 700;
-    margin: 0;
+    margin: 0 0 0.75rem 0;
     letter-spacing: 1px;
-    text-shadow: 0 1px 8px #fbeee6cc;
+    text-shadow: 0 1px 8px #fffbe6cc;
     position: relative;
+    flex-grow: 1;
+  }
+  
+  .zorbas-featured-card-subtext {
+    font-size: 0.9rem;
+    color: var(--zorbas-text-light);
+    line-height: 1.5;
+    margin: 0 0 1.25rem 0;
+    min-height: 4.5em; /* Ensures consistent card height */
+  }
+
+  .zorbas-featured-card-btn {
+    align-self: center;
+    background: var(--zorbas-primary);
+    color: #fff;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .zorbas-featured-card-btn:hover {
+    background: var(--zorbas-secondary);
+    color: var(--zorbas-text-dark);
+    transform: translateY(-2px);
   }
   
   /* Optional: Add a badge for new/featured */
@@ -546,10 +604,10 @@
      ========================================================================== */
   .zorbas-healthy-badges,
   .zorbas-trust-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+    justify-items: center;
   }
   
   .zorbas-healthy-badge,
@@ -598,13 +656,6 @@
     margin: 0;
     box-shadow: 0 6px 32px rgba(90, 62, 27, 0.10);
     position: relative;
-  }
-  
-  .zorbas-trust-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem;
   }
   
   .zorbas-trust-badge {
@@ -663,11 +714,6 @@
   }
   
   @media (max-width: 900px) {
-    .zorbas-trust-badges {
-      flex-direction: column;
-      gap: 2rem;
-      align-items: center;
-    }
     .zorbas-trust-badge {
       max-width: 100%;
       min-width: 0;
@@ -750,6 +796,11 @@
     opacity: 1;
   }
   
+  .zorbas-footer-premium-social {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
   .zorbas-footer-premium-social a {
     color: #fff;
     font-size: 1.5rem;
@@ -822,6 +873,90 @@
       flex-direction: column;
       text-align: center;
     }
+    .zorbas-contact-social-wrap {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.5rem;
+    }
+    .zorbas-topbar {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+    }
+    .zorbas-header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1rem;
+    }
+    .zorbas-hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 38px;
+      height: 38px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 120;
+      margin-left: auto;
+    }
+    .zorbas-hamburger-bar {
+      width: 28px;
+      height: 4px;
+      background: var(--zorbas-primary);
+      margin: 3px 0;
+      border-radius: 2px;
+      transition: all 0.3s;
+      display: block;
+    }
+    .zorbas-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(90,62,27,0.08);
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      z-index: 110;
+      padding: 1.5rem 0 1.5rem 0;
+      text-align: center;
+    }
+    .zorbas-nav.zorbas-nav-mobile-open {
+      display: block;
+    }
+    .zorbas-nav ul {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .zorbas-slides-upgraded {
+      grid-template-columns: 1fr;
+    }
+    .zorbas-featured-products-upgraded {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .zorbas-hamburger {
+      display: none;
+    }
+    .zorbas-nav {
+      display: block !important;
+      position: static;
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      text-align: left;
+    }
+    .zorbas-nav ul {
+      flex-direction: row;
+      gap: 2.5rem;
+    }
   }
   
   @media (max-width: 576px) {
@@ -858,6 +993,12 @@
     .zorbas-category-list-upgraded {
       grid-template-columns: 1fr;
     }
+    .zorbas-healthy-badges {
+      grid-template-columns: 1fr 1fr;
+    }
+    .zorbas-trust-badges {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 600px) {
@@ -867,7 +1008,40 @@
     }
   }
 
-  .zorbas-featured-products-upgraded {
-    padding-bottom: 100px;
-    margin-top: 0;
+  @media (max-width: 1200px) {
+    .zorbas-featured-products-upgraded {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .zorbas-featured-card {
+      max-width: none;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .zorbas-featured-products-upgraded {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .zorbas-topbar-cycler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 32px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    animation: zorbas-fadein 0.5s;
+    transition: color 0.3s;
+  }
+
+  @keyframes zorbas-fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .zorbas-topbar-cycler .zorbas-divider {
+    display: none !important;
   }
