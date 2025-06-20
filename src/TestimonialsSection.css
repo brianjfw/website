@@ -1,0 +1,92 @@
+.zorbas-testimonials-section {
+  /* background: #fffbe6; */
+  padding: 3rem 1.2rem;
+  border-radius: 1.5rem;
+  margin: 2rem 0;
+  /* box-shadow: 0 6px 32px rgba(90, 62, 27, 0.08); */
+  position: relative;
+}
+
+.zorbas-testimonials-title {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--zorbas-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.1px;
+}
+
+.zorbas-testimonials-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.zorbas-testimonial-card {
+  background: #fff;
+  border-radius: 1rem;
+  /* box-shadow: 0 2px 10px rgba(90, 62, 27, 0.10); */
+  padding: 1.1rem 0.9rem 0.8rem 0.9rem;
+  max-width: 210px;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--zorbas-secondary);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.zorbas-testimonial-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  /* box-shadow: 0 4px 16px rgba(90, 62, 27, 0.13); */
+  border-color: var(--zorbas-primary);
+}
+
+.zorbas-testimonial-avatar {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  background: var(--zorbas-secondary);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--zorbas-primary);
+  /* box-shadow: 0 1px 4px rgba(90, 62, 27, 0.08); */
+}
+
+.zorbas-testimonial-quote {
+  font-size: 0.85rem;
+  color: var(--zorbas-text-dark);
+  font-style: italic;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  line-height: 1.4;
+  position: relative;
+}
+
+.zorbas-testimonial-name {
+  font-size: 0.8rem;
+  color: var(--zorbas-primary);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 900px) {
+  .zorbas-testimonials-list {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .zorbas-testimonial-card {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+} 

@@ -1,0 +1,112 @@
+.zorbas-story-section {
+  background: linear-gradient(135deg, var(--zorbas-secondary) 0%, #fffbe6 100%);
+  padding: 4rem 2rem;
+  border-radius: 1.5rem;
+  margin: 3rem 0;
+  box-shadow: 0 6px 32px rgba(90, 62, 27, 0.08);
+  position: relative;
+}
+
+.zorbas-story-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--zorbas-primary);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1.2px;
+}
+
+.zorbas-timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.zorbas-timeline-event {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 180px;
+}
+
+.zorbas-timeline-icon {
+  font-size: 2.8rem;
+  background: var(--zorbas-secondary);
+  color: var(--zorbas-primary);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(90, 62, 27, 0.10);
+  margin-bottom: 1rem;
+  border: 3px solid var(--zorbas-primary);
+}
+
+.zorbas-timeline-content {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(90, 62, 27, 0.07);
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  min-width: 160px;
+  max-width: 220px;
+  margin-bottom: 1rem;
+}
+
+.zorbas-timeline-year {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--zorbas-primary);
+  margin-bottom: 0.3rem;
+}
+
+.zorbas-timeline-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--zorbas-text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.zorbas-timeline-desc {
+  font-size: 0.98rem;
+  color: var(--zorbas-text-light);
+}
+
+.zorbas-timeline-connector {
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--zorbas-primary), var(--zorbas-secondary));
+  margin: 0.5rem 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 900px) {
+  .zorbas-timeline {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .zorbas-timeline-event {
+    min-width: 0;
+    width: 100%;
+  }
+  .zorbas-timeline-content {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .zorbas-timeline-connector {
+    width: 40px;
+    height: 4px;
+    background: linear-gradient(to right, var(--zorbas-primary), var(--zorbas-secondary));
+    margin: 1rem auto;
+  }
+} 
